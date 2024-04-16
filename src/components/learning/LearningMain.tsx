@@ -198,7 +198,7 @@ export default function LearningMain() {
               <hr />
                 {courseLevelData?.data?.map(
                   (label: ICourseLevelData, index: number) => (
-                    <div>
+                    <div key={index}>
                       <div className="flex justify-between pr-2">
                         <button
                           onClick={() => {toggleOpen(index), setLabelData(label)}}

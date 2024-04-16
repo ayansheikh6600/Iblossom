@@ -61,7 +61,7 @@ const Membership = () => {
             {subscriptionData?.map(
               (subscription: ISubscription, index: number) => {
                 return (
-                  <div className="cards duration-300 hover:border-[#5371FB] border h-[450px] w-[380px] pt-[60px] rounded-[15px]">
+                  <div key={index} className="cards duration-300 hover:border-[#5371FB] border h-[450px] w-[380px] pt-[60px] rounded-[15px]">
                     <div className="h-[330px] w-[245px]   mx-auto">
                       <div className="h-[60px]">
                         <p className="font-bold text-[20px] mt-1">
