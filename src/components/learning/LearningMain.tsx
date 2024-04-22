@@ -16,7 +16,7 @@ import SingleMilestone from "../milestone/SingleMilestone";
 import { IMilestoneData } from "@/types/miestoneType";
 import Link from "next/link";
 import { IoIosArrowDropdown } from "react-icons/io";
-import LearningPageImage from '../../assets/svg/LearningPage.svg'
+import LearningPageImage from "../../assets/svg/LearningPage.svg";
 
 import { useAppSelector } from "@/redux/hooks";
 import BannerLearning from "../Home/Banner&hero/BannerLearning";
@@ -153,7 +153,6 @@ export default function LearningMain() {
         <div
           style={{
             marginTop: "1.8rem",
-           
           }}
           className="relative min-h-screen container rounded-xl p-2 mx-auto mt-12 lg:mt-5 md:mt-6 xl:mt-6 py-2 md:py-3 lg:py-5 xl:py-6 "
         >
@@ -193,15 +192,16 @@ export default function LearningMain() {
           <div className="items-start mt-3 lg:mt-5 md:mt-3 xl:mt-7">
             {/*//! label section */}
             <div className="hidden  lg:flex flex-col w-full">
-              
               <div className="flex relative flex-col justify-self-start gap-3 mt-3 w-full mr-2 ">
-              <hr />
+                <hr />
                 {courseLevelData?.data?.map(
                   (label: ICourseLevelData, index: number) => (
                     <div key={index}>
                       <div className="flex justify-between pr-2">
                         <button
-                          onClick={() => {toggleOpen(index), setLabelData(label)}}
+                          onClick={() => {
+                            toggleOpen(index), setLabelData(label);
+                          }}
                           key={label?._id}
                           className={`py-2  px-3 text-xl font-bold text-[#1C3052] relative`}
                           style={
@@ -222,7 +222,7 @@ export default function LearningMain() {
                                 ? "rotate(180deg)"
                                 : "rotate(0deg)"
                             }`,
-                            cursor :"pointer"
+                            cursor: "pointer",
                           }}
                           onClick={() => {
                             toggleOpen(index), setLabelData(label);
@@ -231,7 +231,6 @@ export default function LearningMain() {
                           alt=""
                         />
                       </div>
-                      
 
                       {openIndex === index && (
                         <div className="w-full  mt-3 lg:mt-0 md:mt-2 xl:mt-0 ">
@@ -253,15 +252,31 @@ export default function LearningMain() {
                                       <h1 className="text-[22px]">
                                         {index + 1}. {course?.title}
                                       </h1>
-                                      <h1 className="text-[#FB8500]">${course?.price}</h1>
-                                      <h1 className="bg-[#5371FB] p-2 hover:bg-[#4365fb] cursor-pointer  text-white font-bold rounded-md"
-                                      onClick={() => {
-                                                router.push(
-                                                  `/payment/checkout/${course._id}?category=${course?.category?._id}?categoryName=${course?.category?.title}?courseName=${course.title}`
-                                                );
-                                              }}>
-                                        Buy Now
+                                      <h1 className="text-[#FB8500]">
+                                        ${course?.price}
                                       </h1>
+                                      <div className="flex justify-between gap-2 px-2">
+                                        <h1
+                                          className="bg-[#5371FB] p-2 w-full hover:bg-[#4365fb] cursor-pointer  text-white font-bold rounded-md"
+                                          onClick={() => {
+                                            router.push(
+                                              `/payment/checkout/${course._id}?category=${course?.category?._id}?categoryName=${course?.category?.title}?courseName=${course.title}`
+                                            );
+                                          }}
+                                        >
+                                          Buy Now
+                                        </h1>
+                                        <h1
+                                          className="bg-[#5371FB] w-full p-2 hover:bg-[#4365fb] cursor-pointer  text-white font-semibold rounded-md"
+                                          onClick={() => {
+                                            router.push(
+                                              `/course/milestone/${course._id}?category=${course?.category?._id}?categoryName=${course?.category?.title}?courseName=${course.title}`
+                                            );
+                                          }}
+                                        >
+                                          Visit Now
+                                        </h1>
+                                      </div>
                                     </div>
                                     //     <Popconfirm
                                     //       title="Do you want to purchase?"
@@ -330,7 +345,7 @@ export default function LearningMain() {
                     href={"/subscription"}
                     className="bg-white shadow-lg p-2 rounded-lg border-2 border-blue-500 text-blue-500 text-lg font-bold"
                   >
-                   Check Out Our MEMBERSHIP
+                    Check Out Our MEMBERSHIP
                   </Link>
                 </div>
               </div>
