@@ -40,7 +40,7 @@ const NewContactPage = () => {
                   </div>
                   <div className="flex gap-3 border-b-2 border-[#FB8500] pb-5 pt-3 items-center">
                     <IoMdMail size={19} />
-                    <div className="font-bold">{`Mail@iblossom.com`}</div>
+                    <div className="font-bold">{`hello@iblossomlearn.com`}</div>
                   </div>
                   <div className="flex gap-3 pb-5 pt-3 items-center">
                     <FaLocationDot size={18} />

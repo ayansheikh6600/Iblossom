@@ -311,7 +311,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="flex justify-center  py-6">
-            <Image src={aboutOwner}  alt="" className="bg-[#fb860028] h-[450px] w-[450px] rounded-lg shadow-[17px_-17px_5px_0px_rgba(251,134,0,0.5)]  hover:shadow-[-17px_17px_5px_0px_rgba(251,134,0,0.5)] transition-all cursor-pointer" />
+            <Image src={aboutOwner}  alt="" className="bg-[#fb860028] h-[320px] w-[320px] rounded-lg shadow-[17px_-17px_5px_0px_rgba(251,134,0,0.5)]  hover:shadow-[-17px_17px_5px_0px_rgba(251,134,0,0.5)] transition-all cursor-pointer" />
           </div>
         </div>
           {/* <div className="grid grid-cols-2 items-center mt-5 bg-[#fb860028]">
