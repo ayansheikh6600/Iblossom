@@ -105,15 +105,17 @@ export default function SingleMilestone({
                 
               </p>
               <div>
-                <div className="flex">
+              <div className="flex gap-3">
                 <Image
+                className="hover:opacity-[70%]"
                           style={{
                             transform: `${
                               openIndex === index
                                 ? "rotate(180deg)"
-                                : "rotate(0deg)"
+                                : "rotate(90deg)"
                             }`,
                             cursor: "pointer",
+                            
                           }}
                           onClick={() => {
                             toggleOpen(index), testfunction(module?._id);
@@ -121,7 +123,8 @@ export default function SingleMilestone({
                           src={Arrow}
                           alt=""
                         />
-              <p className="text-xl font-bold" onClick={()=>{toggleOpen(index),testfunction(module?._id)}}> {module?.title}</p>
+              <Link href={`/lesson/module/${module?._id}?module=${module?.title}}`} className="text-xl font-bold cursor-pointer hover:text-gray-600" > {module?.title}</Link>
+              
                 </div>
               <div className="pl-5">
                 {
