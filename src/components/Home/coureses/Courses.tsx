@@ -33,6 +33,9 @@ const Courses = ({
     return courses
       .slice(startIndex, endIndex)
       .map((course: ICourseData, index: number) => (
+        
+        // console.log(course)
+        
         <SIngleCourse course={course} key={index} />
       ));
   };
@@ -46,6 +49,8 @@ const Courses = ({
     ...query,
   });
   const courseData = data?.data || [];
+
+  // console.log(data?.data);
 
   const totalCourses = courseData.length;
 

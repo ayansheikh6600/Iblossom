@@ -81,7 +81,7 @@ export default function MilestoneHomeFeatures() {
   };
 
   const TestElemnt = (course: any, title: string) => {
-    console.log(course, "ssysysy");
+    // console.log(course, "ssysysy");
 
     // console.log(title);
 
@@ -121,7 +121,7 @@ export default function MilestoneHomeFeatures() {
   const { data = {}, isLoading } = useGetAllCategoryChildrenQuery({
     ...query,
   }) as any;
-  console.log("🚀 ~ MilestoneHomeFeatures ~ data:", data.data);
+  // console.log("🚀 ~ MilestoneHomeFeatures ~ data:", data.data);
   // setActiveTabKey(data?.data[0])
 
   // setClaseAcctive(data?.data && data?.data[0].title)
