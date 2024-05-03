@@ -99,7 +99,7 @@ export default function SingleMilestone({
             //   key={module?._id || index}
             //   className="text-gray-900 text-start flex justify-start  gap-1"
             // >
-            <div>
+            <div key={index}>
               <p className="mt-1">
                 {/* <HiOutlineClipboardDocumentList /> */}
                 
@@ -128,7 +128,7 @@ export default function SingleMilestone({
                   openIndex == index ? (resData.map((item:any, index:number)=>{
                     console.log(item);
                     return(
-                      <p className="flex gap-2"><Image alt="" width={12}  src={starSvg}/> {" "}
+                      <p className="flex gap-2" key={index}><Image alt="" width={12}  src={starSvg}/> {" "}
                       <Link href={`/lesson/module/${item?.module?._id}?module=${item?.module?.title}`}>{item?.title}</Link></p>
                     )
                   })
