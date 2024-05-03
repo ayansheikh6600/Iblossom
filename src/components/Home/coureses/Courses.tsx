@@ -54,6 +54,83 @@ const Courses = ({
 
   const totalCourses = courseData.length;
 
+
+
+  function Pagination({ coursedata }:any) {
+    // State
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 4;
+  
+    // Calculate indexes of the courses to display on the current page
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentCourses = coursedata.slice(indexOfFirstItem, indexOfLastItem);
+  
+    // Change page
+    const handlePageChange = (pageNumber:any) => setCurrentPage(pageNumber);
+  
+    return (
+      <div>
+        <CourseList courses={currentCourses} />
+        <PaginationButtons
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
+          totalItems={coursedata.length}
+          onPageChange={handlePageChange}
+        />
+      </div>
+    );
+  }
+  
+  function CourseList({ courses }:any) {
+    return (
+      <div className="grid grid-cols-4 gap-3">
+        {courses.map((course:any, index:number) => (
+          <SIngleCourse course={course} key={index} />
+        ))}
+      </div>
+    );
+  }
+  
+  function PaginationButtons({ currentPage, itemsPerPage, totalItems, onPageChange }:any) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+  
+    const handleClick = (pageNumber:any) => {
+      onPageChange(pageNumber);
+    };
+  
+    const renderPageNumbers = () => {
+      const pageNumbers = [];
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(
+          <button className={`p-1 px-2 rounded-md  ${i === currentPage ? "bg-blue-600 text-white" : ""}`} key={i} onClick={() => handleClick(i)} disabled={i === currentPage}>
+            {i}
+          </button>
+        );
+      }
+      return pageNumbers;
+    };
+  
+    return (
+      <div className="flex justify-center gap-2 p-2 w-full bg-gray-200 mt-2 rounded-md">
+        {currentPage > 1 && (
+          <button onClick={() => handleClick(currentPage - 1)}>Previous</button>
+        )}
+        {renderPageNumbers()}
+        {currentPage < totalPages && (
+          <button onClick={() => handleClick(currentPage + 1)}>Next</button>
+        )}
+      </div>
+    );
+  }
+  
+
+  
+
+
+
+
+
   const onChange: PaginationProps["onChange"] = (page) => {
     setCurrentPage(page);
   };
@@ -76,16 +153,17 @@ const Courses = ({
             width === "container" ? "container" : "w-full"
           } mx-auto `}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
             {renderCoursesForPage(courseData)}
-          </div>
-          <div className={`mt-10 mb-2  flex justify-center items-center bg-gray-200 p-2 rounded-md`}>
-            <Pagination
+          </div> */}
+          <div className={`mt-10 mb-2  flex justify-center items-center  p-2 rounded-md`}>
+            {/* <Pagination
               current={currentPage}
               onChange={onChange}
               defaultCurrent={1}
               total={totalCourses}
-            />
+            /> */}
+            <Pagination coursedata={courseData}/>
           </div>
         </div>
       )}
