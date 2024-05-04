@@ -84,7 +84,7 @@ const Courses = ({
   
   function CourseList({ courses }:any) {
     return (
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid justify-center md:grid-cols-2 lg:grid-cols-4 gap-3">
         {courses.map((course:any, index:number) => (
           <SIngleCourse course={course} key={index} />
         ))}
@@ -112,14 +112,17 @@ const Courses = ({
     };
   
     return (
-      <div className="flex justify-center gap-2 p-2 w-full bg-gray-200 mt-2 rounded-md">
-        {currentPage > 1 && (
+      <div className="flex justify-center w-[400px] sm:w-[80%] mx-auto  gap-2 p-2 bg-gray-200 mt-2 rounded-md ">
+        <div className=" flex overflow-x-scroll">
+          {currentPage > 1 && (
           <button onClick={() => handleClick(currentPage - 1)}>Previous</button>
         )}
         {renderPageNumbers()}
         {currentPage < totalPages && (
           <button onClick={() => handleClick(currentPage + 1)}>Next</button>
         )}
+        </div>
+        
       </div>
     );
   }
