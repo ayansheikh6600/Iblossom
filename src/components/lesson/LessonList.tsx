@@ -180,7 +180,7 @@ export default function LessonList({
                       className="text-[14px] flex justify-between  mx-auto mt-3 text-[#479FEC]"
                     >
                       <h2 className="text-base font-normal flex justify-start gap-1">
-                     <span className="mt-1"><QuizIcon/></span>   Quiz : {quiz?.title}
+                     <span className="mt-1"><QuizIcon/></span>   Quiz : {lesson?.title}
                       </h2>
                       {/* <LockOutlined style={{ fontSize: "18px" }} /> */}
                     </Link>
