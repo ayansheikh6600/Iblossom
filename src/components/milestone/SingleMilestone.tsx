@@ -89,7 +89,7 @@ export default function SingleMilestone({
         {/* //! Milestone Title */}
       </Link>
 
-      <div className="py-3 px-2 pl-3 gap-x-2 gap-y-1 grid  grid-cols-1 lg:grid-cols-2">
+      <div className="py-3 px-2 pl-3 gap-x-2 gap-y-1 grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
         {milestoneData?.modules?.map((module: any, index: number) => {
           // testfunction(module?._id)
@@ -123,7 +123,7 @@ export default function SingleMilestone({
                           src={Arrow}
                           alt=""
                         />
-              <Link href={`/lesson/module/${module?._id}?module=${module?.title}}`} className="text-xl font-bold cursor-pointer hover:text-gray-600" > {module?.title}</Link>
+              <Link href={`/lesson/module/${module?._id}?module=${module?.title}}`} className="text-lg font-bold cursor-pointer hover:text-gray-600" > {module?.title}</Link>
               
                 </div>
               <div className="pl-5">
