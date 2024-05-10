@@ -210,7 +210,7 @@ export default function QuizQuestionCard({
     ? true
     : false
 
-  console.log(quiz, 'quzzzzzzzzz')
+  // console.log(quiz, 'quzzzzzzzzz')
   return (
     <div>
       <div key={quiz?._id} className={`my-4 w-full relative px-2 lg:pl-3 `}>
